@@ -1,7 +1,7 @@
 {
   "name": "letra-website",
   "version": "0.1.0",
-  "homepage": "https://winnercrespo.com/letra-website/",
+  "homepage": "https://winnercrespo.com/letra",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
