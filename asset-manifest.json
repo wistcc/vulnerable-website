@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/vulnerable/static/css/main.8315dda6.css",
+    "main.js": "/vulnerable/static/js/main.956d6c59.js",
+    "static/js/787.57ae97f7.chunk.js": "/vulnerable/static/js/787.57ae97f7.chunk.js",
+    "index.html": "/vulnerable/index.html",
+    "main.8315dda6.css.map": "/vulnerable/static/css/main.8315dda6.css.map",
+    "main.956d6c59.js.map": "/vulnerable/static/js/main.956d6c59.js.map",
+    "787.57ae97f7.chunk.js.map": "/vulnerable/static/js/787.57ae97f7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8315dda6.css",
+    "static/js/main.956d6c59.js"
+  ]
+}
