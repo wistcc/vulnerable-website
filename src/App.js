@@ -5,6 +5,7 @@ function App() {
     <div className='App'>
       <header className='App-header'>
         <img src={'./logo.png'} className='App-logo' alt='logo' />
+        <h2 className='name'>Vulnerable App</h2>
         <div className='store-logos-container'>
           <a href='https://apps.apple.com/us/app/vulnerable-daily-questions/id6444679585'>
             <img

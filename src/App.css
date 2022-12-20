@@ -4,8 +4,15 @@
 }
 
 .App-logo {
-  width: 500px;
+  width: 120px;
+  height: 120px;
   margin-top: -100px;
+}
+
+.name {
+  color: #e986c1;
+  margin-top: -10px;
+  margin-bottom: 50px;
 }
 
 .App-header {
