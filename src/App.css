@@ -276,6 +276,10 @@ font-weight: bold;
     align-self: center;
   }
 
+  .question {
+    font-size: 28px;
+  }
+
   .details {
     text-align: center;
   }
