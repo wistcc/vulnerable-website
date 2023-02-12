@@ -3,37 +3,300 @@
   overflow: hidden;
 }
 
-.App-logo {
-  width: 120px;
-  height: 120px;
-  margin-top: -100px;
-}
-
-.name {
-  color: #e986c1;
-  margin-top: -10px;
-  margin-bottom: 50px;
-}
-
 .App-header {
-  background-color: #feeaf6;
-  min-height: 100vh;
+  background-image: url('../public/header-bg.png');
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  padding-top: 20px;
+}
+
+.left-side {
+  min-width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-left: 10%;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 380px;
+  align-self: flex-start;
+}
+.App-logo {
+  width: 64px;
+  align-self: center;
+  padding-bottom: 10px;
+}
+.name {
+  font-size: 36px;
+  font-weight: bold;
+}
+.slogan {
+  font-size: 20px;
+  align-self: center;
+}
+
+.details {
+  font-size: 20px;
+  text-align: left;
+  max-width: 380px;
 }
 
 .store-logos-container {
   display: flex;
+  flex-direction: column;
+}
+
+.store-details {
+  font-size: 16px;
+  text-align: left;
+}
+
+.store-logos {
+  display: flex;
   align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
 .store-logo {
-  width: 200px;
-  padding: 5px;
+  width: 150px;
+}
+.store-logo-right {
+  margin-left: 10px;
+}
+
+.right-side {
+  display: flex;
+  justify-content: center;
+  min-width: 50%;
+}
+
+.phone-image {
+  position: relative;
+  top: 120px;
+  right: 10%;
+}
+
+.middle-section {
+  background-color: #293c55;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10% 5%;
+}
+
+.title {
+  align-self: flex-start;
+  color: #fff;
+  font-size: 32px;
+}
+
+.second-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10%;
+}
+
+.button {
+  background-color: #fff;
+  width: 250px;
+  border-radius: 25px;
+  padding: 15px 0px;
+  cursor: pointer;
+}
+
+.button:active {
+  border-color: #F96A98;
+  border-style: solid;
+}
+
+.button-text {
+  color: #F96A98;
+  font-weight: bold;
+}
+
+.question-container {
+  max-width: 80%;
+  margin-top: 10%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.question {
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.question-container-spinner {
+  max-height: 250px;
+}
+.question-spinner {
+  animation: slide .5s infinite;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+@keyframes slide {
+  0% {
+    top: 0;
+  }
+  10% {
+    top: -1em;
+  }
+  20% {
+    top: -3em;
+  }
+  30% {
+    top: -5em;
+  }
+  40% {
+    top: -7em;
+  }
+  50% {
+    top: -9em;
+  }
+  60% {
+    top: -11em;
+  }
+  70% {
+    top: -13em;
+  }
+  80% {
+    top: -15em;
+  }
+  90% {
+    top: -17em;
+  }
+}
+
+.middle-section-2 {
+  background-color: #D96B8E;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 10% 5%;
+}
+
+.usp-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 350px;
+}
+
+.usp-image {
+  width: 64px;
+}
+
+.usp-title {
+color: #fff;
+font-size: 20px;
+padding-top: 20px;
+font-weight: bold;
+}
+
+.usp-description {
+  color: #fff;
+  font-size: 16px;
+  padding-top: 30px;
+}
+
+.footer .title {
+  align-self: center;
+}
+.footer .second-title {
+  margin-bottom: 30px;
+}
+
+.footer .store-logos-container {
+  padding-bottom: 5%;
+}
+
+.footer {
+  background-color: #293c55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10% 5%;
+}
+
+.social-logo-right {
+  margin-left: 25px;
+}
+
+.footer .details {
+  color: #fff;
+  text-align: center;
+  max-width: inherit;
+}
+
+/* Medium screen devices (768px and above) */
+@media only screen and (max-width: 768px) {
+  .App-header {
+    flex-direction: column;
+    background-position-x: center;
+    background-color: #293c55;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-side {
+    align-items: center;
+    justify-content: center;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .right-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .phone-image {
+    height: 400px;
+    top: 20px;
+    right: 0px;
+    align-self: center;
+  }
+
+  .logo-container {
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .details {
+    text-align: center;
+  }
+
+  .store-logos-container {
+    align-items: center;
+  }
+
+  .middle-section-2 {
+    flex-direction: column;
+  }
+
+  .usp-container {
+    padding-top: 50px;
+  }
+
+
+.footer .title {
+  font-size: 26px;
+}
+.footer .second-title {
+  font-size: 24px;
+}
 }
