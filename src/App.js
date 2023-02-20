@@ -1,5 +1,11 @@
 import { useState } from 'react'
 import './App.css'
+import mixpanel from 'mixpanel-browser'
+
+mixpanel.init('d2e7c1f14136e9faa6cb80dcd9f8ba15', {
+  // debug: true,
+  ignore_dnt: true,
+})
 
 const localization = require('./localization.json')
 const supportedLanguages = ['en', 'es']
@@ -21,6 +27,15 @@ const getQuestion = () => {
   return question
 }
 
+const trackEvent = (name, props) => {
+  mixpanel.track(name, {
+    ...props,
+    language: currentLanguage,
+  })
+}
+
+trackEvent('visit')
+
 function App() {
   // TODO: getQuestion is being called twice on load
   const [question, setQuestion] = useState(getQuestion())
@@ -30,6 +45,7 @@ function App() {
     setShowSpinner(true)
     setQuestion(getQuestion())
     setTimeout(() => setShowSpinner(false), 2000)
+    trackEvent('question_click')
   }
 
   return (
@@ -51,14 +67,20 @@ function App() {
               {localization[currentLanguage].headerCallToAction}
             </p>
             <div className='store-logos'>
-              <a href='https://apps.apple.com/us/app/vulnerable-daily-questions/id6444679585'>
+              <a
+                href='https://apps.apple.com/us/app/vulnerable-daily-questions/id6444679585'
+                onClick={() => trackEvent('apple_click')}
+              >
                 <img
                   src={'./apple-store.png'}
                   className='store-logo'
                   alt='Apple logo'
                 />
               </a>
-              <a href='https://play.google.com/store/apps/details?id=com.vulnerable.vulnerable'>
+              <a
+                href='https://play.google.com/store/apps/details?id=com.vulnerable.vulnerable'
+                onClick={() => trackEvent('android_click')}
+              >
                 <img
                   src={'./google-play.png'}
                   className='store-logo store-logo-right'
@@ -96,8 +118,10 @@ function App() {
           }`}
         >
           {showSpinner ? (
-            allQuestions.map((q) => (
-              <span className='question question-spinner'>{q}</span>
+            allQuestions.map((q, index) => (
+              <span key={index} className='question question-spinner'>
+                {q}
+              </span>
             ))
           ) : (
             <span className='question'>{question}</span>
@@ -158,14 +182,20 @@ function App() {
 
         <div className='store-logos-container'>
           <div className='store-logos'>
-            <a href='https://apps.apple.com/us/app/vulnerable-daily-questions/id6444679585'>
+            <a
+              href='https://apps.apple.com/us/app/vulnerable-daily-questions/id6444679585'
+              onClick={() => trackEvent('apple_click')}
+            >
               <img
                 src={'./apple-store.png'}
                 className='store-logo'
                 alt='Apple logo'
               />
             </a>
-            <a href='https://play.google.com/store/apps/details?id=com.vulnerable.vulnerable'>
+            <a
+              href='https://play.google.com/store/apps/details?id=com.vulnerable.vulnerable'
+              onClick={() => trackEvent('android_click')}
+            >
               <img
                 src={'./google-play.png'}
                 className='store-logo store-logo-right'
@@ -175,10 +205,16 @@ function App() {
           </div>
         </div>
         <div className='store-logos'>
-          <a href='https://www.instagram.com/vulnerable.app/'>
+          <a
+            href='https://www.instagram.com/vulnerable.app/'
+            onClick={() => trackEvent('ig_click')}
+          >
             <img src={'./instagram.png'} alt='Instagram logo' />
           </a>
-          <a href='https://www.tiktok.com/@vulnerableapp/'>
+          <a
+            href='https://www.tiktok.com/@vulnerableapp/'
+            onClick={() => trackEvent('tiktok_click')}
+          >
             <img
               src={'./tiktok.png'}
               className='social-logo-right'
